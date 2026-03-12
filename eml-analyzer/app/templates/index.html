@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><meta charset='utf-8'><title>Cases</title><script src='https://unpkg.com/htmx.org@1.9.12'></script></head>
+<body>
+<h1>Cases</h1>
+<form hx-post='/cases' hx-target='#result' hx-swap='innerHTML' method='post'>
+  <input name='title' placeholder='Title' required>
+  <input name='description' placeholder='Description'>
+  <button type='submit'>Create case</button>
+</form>
+<div id='result'></div>
+<ul>
+{% for case in cases %}
+  <li><a href='/cases/{{ case.id }}'>{{ case.title }}</a></li>
+{% else %}
+  <li>No cases yet</li>
+{% endfor %}
+</ul>
+</body>
+</html>
