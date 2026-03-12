@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><meta charset='utf-8'><title>Case detail</title></head>
+<body>
+<h1>{{ case.title }}</h1>
+<p>{{ case.description }}</p>
+<p>Status: {{ case.status }}</p>
+
+<form action='/cases/{{ case.id }}/upload' method='post' enctype='multipart/form-data'>
+  <input type='file' name='file' accept='.eml' required>
+  <button type='submit'>Upload .eml</button>
+</form>
+
+<p><a href='/cases/{{ case.id }}/emails/view'>View emails</a></p>
+<p><a href='/'>Back</a></p>
+</body>
+</html>

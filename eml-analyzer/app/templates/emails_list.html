@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><meta charset='utf-8'><title>Emails</title></head>
+<body>
+<h1>Emails in case: {{ case.title }}</h1>
+<ul>
+{% for email in emails %}
+  <li><a href='/cases/{{ case.id }}/emails/{{ email.id }}/view'>{{ email.subject_raw or '(no subject)' }}</a> — {{ email.from_email or 'unknown' }}</li>
+{% else %}
+  <li>No emails parsed yet</li>
+{% endfor %}
+</ul>
+<p><a href='/cases/{{ case.id }}'>Back to case</a></p>
+</body>
+</html>

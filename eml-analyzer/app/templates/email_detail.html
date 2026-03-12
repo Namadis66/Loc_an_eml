@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><meta charset='utf-8'><title>Email detail</title></head>
+<body>
+<h1>{{ email.subject_raw }}</h1>
+<p>From: {{ email.from_name }} &lt;{{ email.from_email }}&gt;</p>
+<p>Date: {{ email.date_raw }}</p>
+<h2>Text</h2>
+<pre>{{ email.body_text_clean }}</pre>
+<h2>HTML</h2>
+<pre>{{ email.body_html_raw }}</pre>
+<p><a href='/cases/{{ email.case_id }}/emails/view'>Back to list</a></p>
+</body>
+</html>
